@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b6e4f" />
+  <title>Download Kitab - Memperbaharui Iman (Tajdidul Iman)</title>
+  <meta name="description" content="Download kitab Memperbaharui Iman (Tajdidul Iman) untuk peserta daurah." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --green: #0b6e4f;
+      --green-dark: #095c42;
+      --bg: #f4f6f5;
+      --text: #1f2a26;
+      --muted: #6b7772;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      -webkit-font-smoothing: antialiased;
+    }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+      max-width: 440px;
+      width: 100%;
+      padding: 32px 26px 28px;
+      text-align: center;
+    }
+    .icon {
+      width: 72px;
+      height: 72px;
+      margin: 0 auto 18px;
+      background: linear-gradient(135deg, var(--green), var(--green-dark));
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon svg { width: 36px; height: 36px; fill: #fff; }
+    h1 {
+      font-size: 1.35rem;
+      line-height: 1.35;
+      margin-bottom: 6px;
+    }
+    .subtitle { color: var(--muted); font-size: 0.95rem; margin-bottom: 22px; }
+    .meta {
+      display: inline-flex;
+      gap: 14px;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .meta span { display: inline-flex; align-items: center; gap: 5px; }
+    .btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      background: var(--green);
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.05rem;
+      font-weight: 600;
+      padding: 16px;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+    .btn:hover { background: var(--green-dark); }
+    .btn:active { transform: scale(0.98); }
+    .btn svg { width: 22px; height: 22px; fill: #fff; }
+    .hint {
+      margin-top: 16px;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .status {
+      margin-top: 14px;
+      font-size: 0.85rem;
+      color: var(--green-dark);
+      min-height: 20px;
+      font-weight: 600;
+    }
+    footer {
+      margin-top: 22px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+    </div>
+    <h1>Memperbaharui Iman</h1>
+    <p class="subtitle">Tajdidul Iman &middot; Materi Daurah</p>
+
+    <div class="meta">
+      <span>
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="#6b7772"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        PDF
+      </span>
+      <span>± 16 MB</span>
+    </div>
+
+    <a class="btn" id="downloadBtn" href="tajdidul-iman.pdf" download="Memperbaharui Iman - Tajdidul Iman.pdf">
+      <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
+      Download Kitab
+    </a>
+
+    <p class="status" id="status"></p>
+
+    <p class="hint">
+      Ketuk tombol di atas. File akan tersimpan ke folder <strong>Download</strong> di HP Anda.
+      Jika terbuka sebagai pratinjau, ketuk ikon simpan/unduh di pojok layar.
+    </p>
+
+    <footer>pdf.muslimsolo.id</footer>
+  </main>
+
+  <script>
+    (function () {
+      var btn = document.getElementById('downloadBtn');
+      var status = document.getElementById('status');
+
+      btn.addEventListener('click', function () {
+        status.textContent = 'Mengunduh... silakan cek folder Download Anda.';
+        setTimeout(function () { status.textContent = ''; }, 6000);
+      });
+    })();
+  </script>
+</body>
+</html>
